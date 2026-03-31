@@ -810,3 +810,88 @@ body {
   line-height: 1.6;
   color: #555;
 }
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  /* HERO */
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-right {
+    padding-top: 0;
+  }
+
+  .illustration img {
+    width: 100%;
+  }
+
+  /* CARDS */
+  .hero-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* ABOUT */
+  .about-steps {
+    grid-template-columns: 1fr;
+  }
+
+  /* TECH */
+  .tech-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* ADVANTAGES */
+  .advantages-inner {
+    flex-direction: column;
+  }
+
+  .advantages-media {
+    max-width: 100%;
+  }
+
+  .advantages-media .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  /* CONTACTS */
+  .contacts-wrapper {
+    grid-template-columns: 1fr;
+    padding: 30px;
+  }
+
+  .contacts-left h2 {
+    font-size: 32px;
+  }
+
+}
