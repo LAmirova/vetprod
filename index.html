@@ -21,6 +21,11 @@
   <a href="#advantages">Преимущества</a>
   <a href="#contacts">Контакты</a>
 </nav>
+    <div class="burger" onclick="toggleMenu()">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
   </div>
 </header>
 
@@ -315,4 +320,10 @@
   </div>
 </footer>
 </body>
+
+<script>
+function toggleMenu() {
+  document.querySelector('.nav').classList.toggle('active');
+}
+</script>
 </html>
