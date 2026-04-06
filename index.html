@@ -78,8 +78,35 @@
 
   </div>
 
-  <a href="#about" class="scroll-btn">Подробнее о проекте ↓</a>
+ <a href="#about" class="scroll-btn">Подробнее о проекте ↓</a>
+</section>
 
+<section class="hero-visual">
+  
+  <div class="visual-container">
+    <div class="visual-text-left">
+      <div class="animated-text">
+        Биология<br>точности
+      </div>
+      <div class="animated-sub">
+        Никакой магии — только наука и результаты
+      </div>
+      
+      <!-- ОТСТУП — добавил пустой div или можно просто margin в CSS -->
+      <div class="text-spacer"></div>
+      
+      <div class="animated-tagline">
+        Результат,<br>который видно
+      </div>
+      <div class="animated-desc">
+        Цитология + гормоны = точное осеменение
+      </div>
+    </div>
+
+    <div class="visual-single-photo">
+      <img src="img/фоторамки.png" alt="Коллаж диагностики">
+    </div>
+  </div>
 </section>
 
 <!-- ABOUT -->
@@ -189,69 +216,50 @@
 
 <section id="advantages" class="advantages">
   <div class="container">
-
     <h2 class="section-title">Преимущества продукта</h2>
-
     <div class="advantages-inner">
-
-      <!-- ЛЕВО: ТЕКСТ -->
       <div class="advantages-list">
-
         <div class="adv-item">
           <h3>Профилактика заболеваний</h3>
           <p>Снижение риска репродуктивных патологий (кисты, гипофункция яичников)</p>
         </div>
-
         <div class="adv-item">
           <h3>Повышение воспроизводства</h3>
           <p>Увеличение процента успешного осеменения</p>
         </div>
-
         <div class="adv-item">
           <h3>Экономическая эффективность</h3>
           <p>Снижение затрат на лечение и потерь от бесплодия</p>
         </div>
-
         <div class="adv-item">
           <h3>Оперативность</h3>
           <p>Диагностика и результат в течение 3–4 часов</p>
         </div>
-
         <div class="adv-item">
           <h3>Применимость в хозяйствах</h3>
           <p>Не требует сложного лабораторного оборудования</p>
         </div>
-
         <div class="adv-item">
           <h3>Индивидуальный подход</h3>
           <p>Решение по каждому животному: осеменение / лечение / дообследование</p>
         </div>
-
       </div>
 
-      <!-- ПРАВО: ФОТО -->
+      <!-- КРАСИВАЯ ГАЛЕРЕЯ С БОЛЬШИМИ ФОТКАМИ -->
       <div class="advantages-media">
-
         <div class="grid">
-
           <div class="big">
-            <img src="img/pic1.jpg" alt="">
+            <img src="img/pic1.jpg" alt="Диагностика">
           </div>
-
           <div class="small">
-            <img src="img/pic2.jpg" alt="">
+            <img src="img/pic2.jpg" alt="Лаборатория">
           </div>
-
           <div class="small">
-            <img src="img/pic3.jpg" alt="">
+            <img src="img/pic3.jpg" alt="Исследование">
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </div>
 </section>
 
@@ -323,7 +331,42 @@
     </div>
 
   </div>
+  
 </footer>
+
+<!-- ВЕСЬ JAVASCRIPT В ОДНОМ МЕСТЕ -->
+<script>
+  // Мобильное меню
+  function toggleMenu() {
+    document.querySelector('.nav').classList.toggle('active');
+  }
+
+  // Анимация при скролле для ВСЕХ блоков
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    return rect.top <= windowHeight - 80 && rect.bottom >= 0;
+  }
+
+  function animateOnScroll() {
+    const elements = document.querySelectorAll(
+      '.card, .section-title, .section-subtitle, .about-step, ' +
+      '.tech-main, .tech-item, .adv-item, .advantages-media img, ' +
+      '.contacts-left h2, .contacts-sub, .contact-item, .contacts-right, ' +
+      '.animated-text, .animated-sub, .animated-tagline, .animated-desc, .visual-single-photo'
+    );
+    
+    elements.forEach(el => {
+      if (isElementInViewport(el) && !el.classList.contains('visible')) {
+        el.classList.add('visible');
+      }
+    });
+  }
+
+  // Запускаем при загрузке и при скролле
+  window.addEventListener('load', animateOnScroll);
+  window.addEventListener('scroll', animateOnScroll);
+</script>
 </body>
 
 <script>
