@@ -788,7 +788,7 @@ body {
 }
 
 .visual-single-photo img {
-  width: 900px;
+  width: 800px;
   height: auto;
   background: transparent;
   display: block;
@@ -912,6 +912,7 @@ body {
   }
 
   .burger {
+    margin-left: auto; /* толкает вправо */
     display: flex;
     flex-direction: column;
     gap: 5px;
