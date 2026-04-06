@@ -25,8 +25,16 @@ body {
 /* ================= HEADER ================= */
 .header {
   padding: 30px 0;
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Эффект при скролле — добавляется тень */
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .header-inner {
