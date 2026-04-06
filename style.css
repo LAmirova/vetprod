@@ -3,6 +3,19 @@ html {
   scroll-behavior: smooth;
 }
 
+.backdrop-blur {
+    backdrop-filter: blur(32px);
+    border-radius: 100px;
+}
+
+.gradient-overlay {
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+}
+
+.centered {
+    top: calc(50vh - 250px + 460px);
+}
+
 * {
   margin: 0;
   padding: 0;
