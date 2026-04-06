@@ -367,7 +367,34 @@
   window.addEventListener('load', animateOnScroll);
   window.addEventListener('scroll', animateOnScroll);
 
+  let lastScrollTop = 0;
+
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('.header');
+  const aboutSection = document.querySelector('#about');
+  const currentScroll = window.scrollY;
   
+  if (!aboutSection) return;
+  
+  const aboutBottom = aboutSection.offsetTop + aboutSection.offsetHeight;
+  
+  // Если ниже блока "О проекте"
+  if (currentScroll > aboutBottom - 100) {
+    // Скролл вниз — скрываем
+    if (currentScroll > lastScrollTop) {
+      header.classList.add('header-hidden');
+    } 
+    // Скролл вверх — показываем
+    else {
+      header.classList.remove('header-hidden');
+    }
+  } else {
+    // Над блоком "О проекте" — всегда показываем
+    header.classList.remove('header-hidden');
+  }
+  
+  lastScrollTop = currentScroll;
+});
 </script>
 </body>
 
