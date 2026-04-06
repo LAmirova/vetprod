@@ -911,21 +911,21 @@ body {
     font-size: 32px;
   }
 
-  .burger {
-    margin-left: auto; /* толкает вправо */
+.burger {
     display: flex;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
-  }
+    margin-left: auto;  /* ПРИЖИМАЕТ ВПРАВО */
+    margin-right: 0;
+}
 
-  .burger span {
+.burger span {
     width: 24px;
     height: 2px;
     background: #111;
     border-radius: 2px;
-  }
-
+}
   .nav {
     z-index: 999;
     position: absolute;
